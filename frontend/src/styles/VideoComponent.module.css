@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.mainArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding-inline: 20px;
+    width: 100%;
+    height: 100vh;
+    gap: 2rem;
+    background-color: #f7f9fa;
+    box-sizing: border-box;
+    padding-top: 54px;
+    
+}
+
+.leftArea{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.videoArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+}
+
+.videoArea > video {
+    border-radius: 16px;
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+@media(max-width: 768px){
+    .mainArea{
+        flex-direction: column;
+        margin-top: 60px;
+        gap: 5vh;
+        height: auto;
+
+    }
+    .leftArea{
+        padding: 20px 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .videoArea{
+        width: 100%;
+        justify-content: center;
+    }
+    .videoArea > video {
+        width: 90vw;
+        height: auto;
+        
+    }
+}
+
+.meetVideoContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 54px;
+    position: relative;
+    height: calc(100vh - 54px); 
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+    overflow: hidden;
+}
+
+.meetUserVideo {
+    position: absolute;
+    bottom: 10vh;
+    height: 20vh;
+    width: auto;
+    left: 2rem;
+    border-radius: 10px;
+}
+
+.buttonContainers {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
+    width: 75%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 3;
+    
+}
+
+.buttonContainers svg {
+    font-size: 2rem;
+}
+
+.conferenceView {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    width: 75%;
+    height: 100%;
+    overflow-y: auto;
+    align-items: flex-start;
+}
+
+.videoViews video{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #000;
+    object-fit: cover;
+}
+
+.focusedVideo video {
+  width: 45%;
+  height: 70vh;
+  z-index: 2;
+  left: 25%;
+  position: absolute;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+
+.chatRoom {
+    position: absolute;
+    height: 90vh;
+    width: 25%;
+    right: 0;
+    z-index: 2;
+    background: white;
+    padding-inline: 1rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;  
+}
+
+.chatingDisplay{
+    gap: 2rem;
+    flex: 1;
+    overflow-y:scroll;
+    padding: 1rem 0;
+}
+
+.chatingArea {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+
+}
+
+.chatCard{
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 0.5rem;  
+}
+
+.chatArea{
+    background: #fff!important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2) ;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 0.75rem;    
+}
+.chatArea:hover{
+    box-shadow: 0 0.625rem 3rem rgba(0, 0, 0, 0.25);
+    transform: scale(1.02);
+}
+
+
+@media(max-width: 768px){
+    .meetVideoContainer{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+    }
+    .conferenceView{
+        width: 75%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .videoViews video{
+        width: auto;
+        height: 20vh;
+        border-radius: 10px;
+        background-color: #000;
+        object-fit: cover;
+    }
+     .chatRoom {
+        border-radius: 10px;
+        width: 45%;
+        height: 40vh;
+        padding: 1rem;
+        margin-top: 0.85rem;
+        box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+    }
+    .chatContainer {
+        width: 100%;
+        height: 100%;
+    }
+
+    .buttonContainers {
+        flex-wrap: wrap;
+        width: 100%;
+        padding-inline: 1rem;
+        background: #000;
+    }
+    .buttonContainers svg {
+        font-size: 1.5rem;
+    }
+}
