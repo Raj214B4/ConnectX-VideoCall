@@ -5,11 +5,12 @@ import styles from "../styles/VideoComponent.module.css";
 import nav from "../styles/NavbarComponent.module.css";
 import { CallEnd, Chat, Home, Mic, MicOff, ScreenShare, Send, StopScreenShare, Telegram, VideoCall, Videocam, VideocamOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import server from "../environment";
 
 
 
 
-const server_url = "http://localhost:8080"
+const server_url = server;
 
 const connections = {};
 
