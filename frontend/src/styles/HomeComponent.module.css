@@ -1,27 +1,42 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background: #834bf3;
+    width: 100%;
+    height: 100%;
 }
 .meetContainer {
     display: flex;
-    padding-inline: 20px;
-    width: 100%;
-    height: 100vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-inline: 3rem;
+    width: 80vw;
+    height: 100%;
     gap: 10vw;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.leftPanel  {
+.leftPanel {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    padding-top: 80px;
     flex: 1;
 }
 
+.leftPanel h2{
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+
 .rightPanel {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,35 +45,152 @@ body{
 }
 
 .rightPanel > img {
-    width: 40vw;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 55vh;
     border-radius: 20px;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.homepage nav{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    margin: 2.5rem auto;
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.homepage nav h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.homepage nav svg {
+    font-size: 2.2rem;
+}
+
+.navlist{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.navitem h4{
+    display: flex;
+    align-items: center;
+    gap: 0.525rem;
+    cursor: pointer;
+}
+
+.navlist.showMenu {
+  display: flex;
+}
+
+.navitem {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.logoutbtn{
+    color: #ff7142;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menuicon{
+    display: none;
+    cursor: pointer;
+}
+
+.menuicon svg{
+  font-size: 1.7rem;
 }
 
 
 
 @media(max-width: 768px){
     .meetContainer {
-        flex-direction: column;
-        height: auto;
-        gap: 5vh;
-        margin-top: 60px;  
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        margin-top: 65px ;  
     }
 
     .leftPanel {
         padding: 20px 0;
         text-align: center;
+        justify-content: flex-start;
     }
 
     .leftPanel h2 {
-        font-size: 1.2rem;
-        max-width: 500px;
+        flex-direction: row;
+        font-size: 1.5rem;
+        height: auto;
         margin-top: 60px auto;
     }
 
     .rightPanel > img {
-        width: 70vw;
+        width: 80vw;
+        height: 45vh;
         max-width: 100%;
+    }
+
+    .navlist{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background-color: #9c71f3;
+        border-radius: 10px;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+        top: 100%;
+        right: 0;
+        gap: 1rem;
+        width: 50%;
+    }
+
+    .navlist .showMenu{
+        display: flex;
+        flex-direction: column;
+    }
+    .menuicon{
+        display: block;
+    }
+    .navitem{
+        border-radius: 0;
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) ;
+    }
+    .homepage nav h2{
+        font-size: 1.4rem;
+    }
+
+    .homepage nav svg{
+        font-size: 1.4rem;
+    }
+
+    .logoutbtn{
+        font-size: 1.2rem ;
     }
 }

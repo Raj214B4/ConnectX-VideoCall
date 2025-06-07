@@ -3,7 +3,6 @@
     z-index: 100;
     width: 100%;
     height: 54px;
-    background-color:#f9e1fd ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +11,9 @@
     top:0;
     left: 0;
     right: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #0a0a0a ,#0b5cff);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navBar h3 {
@@ -21,14 +22,16 @@
     gap: 0.625rem;
     padding-inline: 20px;
     font-size: 1.5rem;
+    color: #fff;
 }
 
 .navBar h3 svg{
     color: #ff7142 ;
     font-size: 2.4rem;
 }
-
-
+.navBar svg{
+    color: #fff;
+}
 
 
 /* History component css */
